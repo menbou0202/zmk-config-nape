@@ -49,7 +49,7 @@
         device = <&trackball>;
         scroller {
             layers = <10>;
-            input-processors = <&zip_xy_to_scroll_mapper>;
+            input-processors = <&zip_xy_to_scroll_mapper &zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>;
         };
     };
 };
