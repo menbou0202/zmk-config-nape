@@ -19,5 +19,5 @@
 #
 ---
 include:
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble
     shield: nape rgbled_adapter
