@@ -2,8 +2,6 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: menbou0202
-      url-base: https://github.com/menbou0202
     - name: caksoylar
       url-base: https://github.com/caksoylar
     # Additional modules containing boards/shields/custom code can be listed here as well
@@ -13,9 +11,6 @@ manifest:
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: zmk-pmw3610-driver
-      remote: menbou0202
-      revision: main
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: main
