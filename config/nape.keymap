@@ -1,9 +1,9 @@
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 800
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 120
 #include <dt-bindings/zmk/mouse.h>
 
 // マウス移動とスクロールのデフォルト値を設定
 
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 800
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 120
 
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
