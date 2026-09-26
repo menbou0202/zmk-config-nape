@@ -1,23 +1,11 @@
 # Nape firmware
 
-`main`は従来のNape／ZMK Studio向け設定です。過去にこのリポジトリをforkした方のビルドを急に変えないため、Nape Console対応のβ版は`console-beta`ブランチに分けています。
+`main`はNapeの従来版とZMK Studio対応版をビルドします。`config/west.yml`でZMKとドライバーのコミットを固定しています。GitHub Actionsの成果物には`nape.uf2`と`nape-studio.uf2`が入ります。
 
-## Nape Console β版
+Nape Consoleを使う場合は、別の[`console-beta`ブランチ](https://github.com/menbou0202/zmk-config-nape/tree/console-beta)から`nape-console.uf2`をビルドするか、そのβリリースから入手してください。Console版は専用のZMK forkとドライバーを使用します。
 
-`console-beta`のGitHub Actionsは`nape-console.uf2`をビルドします。ファームウェアのZMK fork、トラックボールドライバー、RGBドライバーは`config/west.yml`のコミットSHAで固定しています。設定画面は[Nape Console](https://menbou0202.github.io/nape-console/)です。デスクトップ版Chrome／Edgeで開き、対応UF2を書き込んだNapeをUSB接続してください。
+## 過去の利用者向け
 
-既存の`nape.uf2`や`nape-studio.uf2`にはConsole専用のCombo・ランタイム設定RPCがありません。従来版を使い続ける場合、`main`のままで構いません。
+旧ZMK向けの[`basic-driver`ブランチ](https://github.com/menbou0202/zmk-config-nape/tree/basic-driver)は、トラックボールの向きを実行時に切り替えるNape独自の処理を使わず、`inorichi/zmk-pmw3610-driver`を参照する保存版です。過去の利用者のため残していますが、新規利用には推奨しません。
 
-### 自分のforkでビルドする場合
-
-自分のforkに`console-beta`ブランチを取り込み、Actionsを有効にしてください。既存forkを`main`で同期するだけでは、新しい別ブランチは自動的には追加されません。GitHub Actionsの「Build ZMK firmware」から`console-beta`を選んで手動実行するか、そのブランチへpushします。完成した`nape-console.uf2`は実行結果の`firmware`成果物に入ります。
-
-ファームウェアを書き込むだけなら、自分でビルドする必要はありません。βリリースに添付された`nape-console.uf2`を使えます。
-
-### 保存設定と復旧
-
-ConsoleのSaveはキーマップ・Combo・ランタイム設定を本体に保存します。通常のUF2書き込みでは保存データは消えません。起動に問題が出たときは、動作を確認済みの従来版UF2に戻してください。設定の全消去はBluetoothペアリングなども消えるため、先にIssueで状況をご連絡ください。
-
-## 開発元
-
-Nape Consoleは[ZMK Studio](https://github.com/zmkfirmware/zmk-studio)を基にしています。Console版ZMKの変更は[menbou0202/zmk](https://github.com/menbou0202/zmk)の`console-beta`ブランチにあります。
+別の旧ドライバーである[`menbou0202/zmk-pmw3610-driver`](https://github.com/menbou0202/zmk-pmw3610-driver)も過去の設定・forkの参照先として残しています。現在の`main`と`console-beta`はどちらも[`zmk-pmw3610-driver-nape`](https://github.com/menbou0202/zmk-pmw3610-driver-nape)を使用します。
